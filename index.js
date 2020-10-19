@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 5000;
 
 const headers = {
     "Content-Type": "text/plain; charset=UTF-8",
@@ -19,6 +19,6 @@ app.get("/sample/", function(req, res) {
     res.set(headers).send(task.toString());
 });
 
-app.listen(port, function() {
-    console.log("Node app is running at localhost:" + port)
+app.listen(PORT, function() {
+    console.log("Node app is running at localhost:" + PORT)
 });
