@@ -1,8 +1,0 @@
-{
-  "headers": {
-    "/*": {
-      "X-Author": "danewdima",
-      "Access-Control-Allow-Origin": "*"
-    }
-  }
-}
