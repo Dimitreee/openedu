@@ -11,12 +11,22 @@ app.get("/login/", function(req, res) {
     res.set(headers).send("danewdima");
 });
 
-app.get("/sample/", function(req, res) {
+app.get("/promise/", function(req, res) {
     function task(x) {
-        return x*(this**2);
+        return new Promise((res, rej) => x < 18 ? res("yes") : rej("no"));
     }
 
     res.set(headers).send(task.toString());
+});
+
+app.get("/fetch/", function (req, res) {
+    const fileDirectory = __dirname + "/public";
+
+    res.sendFile("fetch.html", {root: fileDirectory}, (err) => {
+        res.end();
+
+        if (err) throw(err);
+    });
 });
 
 app.listen(PORT, function() {

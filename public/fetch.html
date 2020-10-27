@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Openedu content managment system</title>
+    <meta name="description" content="This is an example of a meta description.">
+</head>
+<body>
+<div>
+    <input id="inp" type="text">
+    <button id="bt">fetch</button>
+</div>
+<script>
+    const input = document.querySelector("#inp");
+    const button = document.querySelector("#bt");
+
+    button.addEventListener("click", async() => {
+        const response = await fetch(input.value);
+        const body = await response.text();
+
+        input.value = body;
+    })
+</script>
+</body>
+</html>
